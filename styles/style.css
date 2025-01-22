@@ -43,11 +43,7 @@
   box-sizing: border-box;
 
   width: 100%;
-  height: clamp(
-    327px,
-    calc(327px + (368 - 327) * ((100vw - 375px) / (1440 - 375))),
-    368px
-  );
+  padding: 128px 0 128px 0;
 
   margin-block-start: 100px;
   margin-block-end: 100px;
@@ -84,8 +80,7 @@
 .card-title {
   display: flex;
   align-items: center;
-  padding: 3px 10px;
-  min-block-size: 31px;
+  padding: 4.5px 10px;
 }
 
 .card-title h2 {
@@ -148,6 +143,7 @@
 
 @supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .label {
+    text-shadow: none;
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
   }
@@ -174,18 +170,17 @@
   gap: 6px;
 }
 
-.card__like-button {
+.button {
   position: relative;
-  overflow: hidden;
   display: flex;
-  gap: 12px;
   align-items: center;
   cursor: pointer;
+  overflow: hidden;
+  background-color: #fff;
 }
 
-.card__like-button:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0 #000;
+.card__like-button {
+  gap: 12px;
 }
 
 .button-like span {
@@ -210,26 +205,22 @@
   color: var(--white-color);
 }
 
-.footer {
-  margin-block-start: 50px;
+.save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-block-end: 103px;
 }
 
 .button-save {
-  position: relative;
-  display: flex;
   justify-content: center;
-  align-items: center;
   gap: 8px;
   inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   block-size: 51px;
-  background-color: #fff;
   border: 2px solid #000;
-  cursor: pointer;
-  overflow: hidden;
 }
 
-.botton-in-hover::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -238,11 +229,11 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.botton-in-hover:hover::before {
+.button:hover::before {
   transform: translate(0);
 }
 
-.button-save:focus-visible {
+.button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 #000;
 }
@@ -261,7 +252,6 @@ dialog[open] {
 .dialog {
   inline-size: 353px;
   min-inline-size: 341px;
-  block-size: 191px;
 }
 
 .button-close {
