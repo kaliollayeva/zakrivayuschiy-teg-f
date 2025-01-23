@@ -276,6 +276,7 @@ dialog[open] .dialog-text {
 @media (width <= 376px) {
   .header {
     margin-block-start: 100px;
+    padding: 120px 0 120px 0;
   }
   .header-title {
     line-height: 49px;
@@ -291,9 +292,6 @@ dialog[open] .dialog-text {
     line-height: 14px;
     opacity: 50%;
     text-shadow: 1px #fff;
-  }
-  .card-title {
-    padding: 4px 10px;
   }
   .button-save {
     flex-direction: column;
